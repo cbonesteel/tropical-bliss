@@ -15,6 +15,14 @@ def index():
 def map():
     return render_template('map/map.html')
 
+@app.route('/data')
+def data():
+    return render_template('data.html')
+
+@app.route('/aboutus')
+def aboutus():
+    return render_template('aboutus.html')
+
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('error/404.html')
