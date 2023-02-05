@@ -95,7 +95,7 @@ def survey():
                 max_score = score
             if score < min_score:
                 min_score = score
-        bigDict['max_and_min'] = {'max' : max_score, 'min': min_score}
+        #bigDict['max_and_min'] = {'max' : max_score, 'min': min_score}
         for name in state_names:
             norm = (states[name] - min_score) / (max_score - min_score)
             bigDict[name] = {'crime': statesCrime[name], 'climate': statesWeather[name], 'health': statesHealth[name], 'education': statesEdu[name], 'score': states[name], 'norm': norm }
