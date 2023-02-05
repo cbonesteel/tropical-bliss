@@ -123,6 +123,7 @@
 <script type="text/javascript" src="map.js"></script> <!-- creates map. -->
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
+	var data = {{ data|tojson|safe }};
 	
 
 	function tooltipHtml(n, d){	/* function to create html content string in tooltip div. */
@@ -158,7 +159,7 @@
 		});*/
 	
 	/* draw states on id #statesvg */	
-	map.draw("#statesvg", data, tooltipHtml);
+	map.draw("#statesvg", {{ data }}, tooltipHtml);
 	
 	d3.select(self.frameElement).style("height", "600px"); 
 </script>

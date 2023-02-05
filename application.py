@@ -17,7 +17,7 @@ def index():
 
 @app.route('/map')
 def map():
-    return render_template('map/map.html', data=bigDict)
+    return render_template('map/map.html', data=json.dumps(bigDict))
 
 @app.route('/data')
 def data():
@@ -87,7 +87,7 @@ def survey():
         for name in state_names:
             bigDict[name] = {'crime': statesCrime[name], 'climate': statesWeather[name], 'health': statesHealth[name], 'education': statesEdu[name], 'score': states[name]}
 
-        return map(bigDict)
+        return redirect('/map')
 
     return render_template('survey.html')
 
