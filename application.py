@@ -23,6 +23,10 @@ def data():
 def aboutus():
     return render_template('aboutus.html')
 
+@app.route('/survey')
+def survey():
+    return render_template('survey.html')
+
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('404.html')
