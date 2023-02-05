@@ -3,9 +3,14 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed; 
     background-size: cover;
+
 }
 .tropical-blue {
     background-color: #A8C8EE;
+}
+.sand {
+    background-image: url('../pictures/background/sand.png');
+    background-size: 400px;
 }
 .content {
     position: absolute;
