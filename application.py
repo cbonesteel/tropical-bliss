@@ -99,6 +99,30 @@ def survey():
         for name in state_names:
             norm = (states[name] - min_score) / (max_score - min_score)
             bigDict[name] = {'crime': statesCrime[name], 'climate': statesWeather[name], 'health': statesHealth[name], 'education': statesEdu[name], 'score': states[name], 'norm': norm }
+        # Store the results in a list
+        results = []
+
+        # For each state, compute the final score by summing up the scores from each category
+        for name in state_names:
+            score = states[name]
+            results.append((name, score))
+
+        # Sort the results in descending order
+        results.sort(key=lambda x: x[1], reverse=True)
+
+        # Display the top 5 states
+        print("Top 5 states:")
+        bigDict["top5"] = {results[0][0]: results[0][1],
+            results[1][0]: results[1][1],
+            results[2][0]: results[2][1],
+            results[3][0]: results[3][1],
+            results[4][0]: results[4][1],
+        }
+        for i in range(5):
+
+            print("{0}. {1} ({2:.2f})".format(i+1, results[i][0], results[i][1]))
+
+
         print(max_score)
         print(min_score)
         return redirect('/map')

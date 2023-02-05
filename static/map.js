@@ -217,7 +217,7 @@
 		console.log(data)
 		d3.select(id).selectAll(".state")
 			.data(uStatePaths).enter().append("path").attr("class","state").attr("d",function(d){ return d.d;})
-			.style("fill",function(d){ return d3.interpolate("#ffffcc", "#4DA167")(data[d.id].norm); })
+			.style("fill",function(d){ return d3.interpolate("#ffffcc", "#4DA167")(data[d.id].norm*2.5); })
 			.on("mouseover", mouseOver).on("mouseout", mouseOut);
 	}
 	this.uStates=uStates;

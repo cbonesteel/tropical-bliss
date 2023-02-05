@@ -61,7 +61,7 @@
 		margin: 10px 0px 10px 0px;
 		align:  center;
 		padding:5px;
-		width: 142px;
+		width: 180px;
 	}
 	.mapbg p {
 		font-size: 14px;
@@ -101,20 +101,22 @@
 					<h4>Top 5 States</h4>		
 					<hr>
 					<ol>
-						<li><p>first</p></li>
-						<li><p>second</p></li>
-						<li><p>third</p></li>
+						<li><p id="list_first">first</p></li>
+						<li><p id="second">second</p></li>
+						<li><p id="third">third</p></li>
+						<li><p id="fourth">fourth</p></li>
+						<li><p id="fifth">fifth</p></li>
 					</ol>
 				</div>
 			</div>
 			<div class="mapbg">
 				<div class="top-state">
-					<h4>first</h4>
+					<h4 id="first">first</h4>
 					<hr>
-					Crime: <p>thing1</p><br />
-					Climate: <p>thing2</p><br />
-					Health: <p>thing3</p><br />
-					Education: <p>thing4</p><br />
+					Crime Score: <p id="crimescore">thing1</p><br />
+					Climate Score: <p id="climatescore">thing2</p><br />
+					Health Score: <p id="healthscore">thing3</p><br />
+					Education Score: <p id="eduscore">thing4</p><br />
 				</div>
 			</div>
 		</div>
@@ -125,40 +127,37 @@
 <script>
 	var data = JSON.parse({{ data|tojson }});
 	console.log(data)
+	name_list = []
+	for (thing in data.top5) {
+		name_list.push(thing)
+		console.log(thing)
+		console.log(data.top5[thing]);
+	}
+	console.log(name_list);
+	document.getElementById("list_first").innerHTML = name_list[0];
+	document.getElementById("first").innerHTML = name_list[0];
+	document.getElementById("second").innerHTML = name_list[1];
+	document.getElementById("third").innerHTML = name_list[2];
+	document.getElementById("fourth").innerHTML = name_list[3];
+	document.getElementById("fifth").innerHTML = name_list[4];
+	document.getElementById("crimescore").innerHTML = data[name_list[0]].crime;
+	document.getElementById("climatescore").innerHTML = data[name_list[0]].climate;
+	document.getElementById("healthscore").innerHTML = data[name_list[0]].health;
+	document.getElementById("eduscore").innerHTML = data[name_list[0]].education;
+
+
+	var maxScore = 0;
+
 
 	function tooltipHtml(n, d){	/* function to create html content string in tooltip div. */
 		return "<h4>"+n+"</h4><table>"+
-			"<tr><td>Crime: </td><td>"+(d.crime)+"</td></tr>"+
-			"<tr><td>Climate: </td><td>"+(d.climate)+"</td></tr>"+
-			"<tr><td>Health: </td><td>"+(d.health)+"</td></tr>"+
-			"<tr><td>Education: </td><td>"+(d.education)+"</td></tr>"+
+			"<tr><td>Crime Score: </td><td>"+(d.crime)+"</td></tr>"+
+			"<tr><td>Climate Score: </td><td>"+(d.climate)+"</td></tr>"+
+			"<tr><td>Health Score: </td><td>"+(d.health)+"</td></tr>"+
+			"<tr><td>Education Score: </td><td>"+(d.education)+"</td></tr>"+
 			"</table>";
 	}
 
-        var colors = ["#E63B2E", "#F85A3E", "#FF7733", "#FFFF82", "#FCE762", "#A8D4AD", "#606C38"];
-	
-	//var sampleData ={};	/* Sample random data. */	
-	/*["HI", "AK", "FL", "SC", "GA", "AL", "NC", "TN", "RI", "CT", "MA",
-	"ME", "NH", "VT", "NY", "NJ", "PA", "DE", "MD", "WV", "KY", "OH", 
-	"MI", "WY", "MT", "ID", "WA", "DC", "TX", "CA", "AZ", "NV", "UT", 
-	"CO", "NM", "OR", "ND", "SD", "NE", "IA", "MS", "IN", "IL", "MN", 
-	"WI", "MO", "AR", "OK", "KS", "LS", "VA"]
-		.forEach(function(d){ 
-			var crime=Math.round(100*Math.random()), 
-			    climate=Math.round(100*Math.random()), 
-			    health=Math.round(100*Math.random()),
-			    education=Math.round(100*Math.random());
-			sampleData[d]={
-					crime:crime,
-					health:health,
-					climate:climate,
-					education:education, 
-					avg:Math.round((crime+climate+health)/3),
-					color:d3.interpolate("#ffffcc", "#4DA167")(crime/100)
-			};
-		});*/
-	
-	/* draw states on id #statesvg */	
 	uStates.draw("#statesvg", data, tooltipHtml);
 	
 	d3.select(self.frameElement).style("height", "600px"); 
