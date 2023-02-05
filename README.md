@@ -1,9 +1,11 @@
-# UGAHacks8 Project
+# Tropical Bliss
 
 ![hackathon](https://img.shields.io/badge/hackathon-UGAHacks8-lightgrey)
 ![lines](https://img.shields.io/tokei/lines/github/cbonesteel/tropical-bliss)
 ![size](https://img.shields.io/github/repo-size/cbonesteel/tropical-bliss)
 ![issues](https://img.shields.io/github/issues-raw/cbonesteel/tropical-bliss)
+
+Made at UGAHacks8
 
 ## Inspiration
 The HPCC challenge inspired us to tackle a new system and try and take a creative spin on the challenge. Interactive maps are always super fun to mess around with and can display a lot of different data so it was a perfect way to present the data we were given.
