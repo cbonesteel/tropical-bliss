@@ -1,9 +1,8 @@
-
 {% extends "base.html" %}
 {% block title %}Map{% endblock %}
 {% block header %}
 <a class="btn" href="/">
-    <img src="pictures/buttons/back.png" style="width: 75px;height: 75px;">
+    <img src="pictures/buttons/back.png" style="width: 35px;height: 35px;">
 </a>
 {% endblock %}
 {% block content %}
@@ -58,37 +57,65 @@
         .mapbg{
 		background: white;
 		border-radius: 10px;
-		width: fit-content;
 		height: fit-content;
+		margin: 10px 0px 10px 0px;
+		align:  center;
+		padding:5px;
+		width: 142px;
+	}
+	.mapbg p {
+		font-size: 14px;
+		margin-bottom: 4px;
 	}
 	.top-state-list{
 		text-align: center;
-		li{
-			font-size: 10px;
-		}
+		margin: 4px;
+	}
+	.top-state{
+		margin: 4px;
+	}
+	.top-state h4 {
+		text-align: center;
+		margin-bottom: 3px;
+	}
+	.top-state hr {
+		padding: 0px;
+		margin-top: 5px;
+	}
+	.top-state br {
+		line-height: 0.5;
 	}
 </style>
-<body>
+<body style="background: #f5f5f5;">
 <div id="tooltip"></div><!-- div to hold tooltip. -->
 <div class="container">
 	<div class="row">
 		<div class="col-lg-10" style="padding: 5px;">
-			<div class="mapbg">
+			<div>
 				<svg width="960" height="600" id="statesvg"></svg> <!-- svg to hold the map. -->
 			</div>
 		</div>
 		<div class="col-lg-2" style="padding: 5px;">
-			<div class="mapbg" style="margin-left: 10px; float: right; padding:5px;">
+			<div class="mapbg">
 				<div class="top-state-list">
 					<h4>Top 5 States</h4>		
+					<hr>
 					<ol>
-						<li>first</li>
-						<li>second</li>
+						<li><p>first</p></li>
+						<li><p>second</p></li>
+						<li><p>third</p></li>
 					</ol>
 				</div>
 			</div>
-			<div class="mapbg" style="margin-left: 10px; float: right; padding:5px;">
-				Why your first state is that way?
+			<div class="mapbg">
+				<div class="top-state">
+					<h4>first</h4>
+					<hr>
+					Crime: <p>thing1</p><br />
+					Climate: <p>thing2</p><br />
+					Health: <p>thing3</p><br />
+					Education: <p>thing4</p><br />
+				</div>
 			</div>
 		</div>
 	</div>
@@ -99,9 +126,10 @@
 
 	function tooltipHtml(n, d){	/* function to create html content string in tooltip div. */
 		return "<h4>"+n+"</h4><table>"+
-			"<tr><td>Low</td><td>"+(d.low)+"</td></tr>"+
-			"<tr><td>Average</td><td>"+(d.avg)+"</td></tr>"+
-			"<tr><td>High</td><td>"+(d.high)+"</td></tr>"+
+			"<tr><td>Crime: </td><td>"+(d.crime)+"</td></tr>"+
+			"<tr><td>Climate: </td><td>"+(d.climate)+"</td></tr>"+
+			"<tr><td>Health: </td><td>"+(d.health)+"</td></tr>"+
+			"<tr><td>Education: </td><td>"+(d.education)+"</td></tr>"+
 			"</table>";
 	}
 
@@ -114,11 +142,18 @@
 	"CO", "NM", "OR", "ND", "SD", "NE", "IA", "MS", "IN", "IL", "MN", 
 	"WI", "MO", "AR", "OK", "KS", "LS", "VA"]
 		.forEach(function(d){ 
-			var low=Math.round(100*Math.random()), 
-				mid=Math.round(100*Math.random()), 
-				high=Math.round(100*Math.random());
-			sampleData[d]={low:d3.min([low,mid,high]), high:d3.max([low,mid,high]), 
-					avg:Math.round((low+mid+high)/3), color:d3.interpolate("#ffffcc", "#4DA167")(low/100)};
+			var crime=Math.round(100*Math.random()), 
+			    climate=Math.round(100*Math.random()), 
+			    health=Math.round(100*Math.random()),
+			    education=Math.round(100*Math.random());
+			sampleData[d]={
+					crime:crime,
+					health:health,
+					climate:climate,
+					education:education, 
+					avg:Math.round((crime+climate+health)/3),
+					color:d3.interpolate("#ffffcc", "#4DA167")(crime/100)
+			};
 		});
 	
 	/* draw states on id #statesvg */	
