@@ -123,6 +123,7 @@
 <script type="text/javascript" src="map.js"></script> <!-- creates map. -->
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
+	
 
 	function tooltipHtml(n, d){	/* function to create html content string in tooltip div. */
 		return "<h4>"+n+"</h4><table>"+
@@ -135,8 +136,8 @@
 
         var colors = ["#E63B2E", "#F85A3E", "#FF7733", "#FFFF82", "#FCE762", "#A8D4AD", "#606C38"];
 	
-	var sampleData ={};	/* Sample random data. */	
-	["HI", "AK", "FL", "SC", "GA", "AL", "NC", "TN", "RI", "CT", "MA",
+	//var sampleData ={};	/* Sample random data. */	
+	/*["HI", "AK", "FL", "SC", "GA", "AL", "NC", "TN", "RI", "CT", "MA",
 	"ME", "NH", "VT", "NY", "NJ", "PA", "DE", "MD", "WV", "KY", "OH", 
 	"MI", "WY", "MT", "ID", "WA", "DC", "TX", "CA", "AZ", "NV", "UT", 
 	"CO", "NM", "OR", "ND", "SD", "NE", "IA", "MS", "IN", "IL", "MN", 
@@ -154,10 +155,10 @@
 					avg:Math.round((crime+climate+health)/3),
 					color:d3.interpolate("#ffffcc", "#4DA167")(crime/100)
 			};
-		});
+		});*/
 	
 	/* draw states on id #statesvg */	
-	map.draw("#statesvg", sampleData, tooltipHtml);
+	map.draw("#statesvg", data, tooltipHtml);
 	
 	d3.select(self.frameElement).style("height", "600px"); 
 </script>
