@@ -56,7 +56,7 @@ def survey():
                     'ID': 0, 'IL': 0, 'IN': 0, 'IA': 0, 'KS': 0, 'KY': 0, 'LA': 0, 'ME': 0, 'MD': 0, 'MA': 0, 'MI': 0,
                     'MN': 0, 'MS': 0, 'MO': 0, 'MT': 0, 'NE': 0, 'NV': 0, 'NH': 0, 'NJ': 0, 'NM': 0, 'NY': 0, 'NC': 0,
                     'ND': 0, 'OH': 0, 'OK': 0, 'OR': 0, 'PA': 0, 'RI': 0, 'SC': 0, 'SD': 0, 'TN': 0, 'TX': 0, 'UT': 0,
-                    'VT': 0, 'VA': 0, 'WA': 0, 'WV': 0, 'WI': 0, 'WY': 0}
+                    'VT': 0, 'VA': 0, 'WA': 0, 'WV': 0, 'WI': 0, 'WY': 0, 'min': 0, 'max': 0}
             with open(file) as csv_file:
                 csv_reader = csv.reader(csv_file, delimiter=',')
                 linecount = 0
@@ -84,9 +84,23 @@ def survey():
 
         state_names= [ 'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY' ];
 
+        max_score = 0
+        min_score = 0
         for name in state_names:
-            bigDict[name] = {'crime': statesCrime[name], 'climate': statesWeather[name], 'health': statesHealth[name], 'education': statesEdu[name], 'score': states[name]}
+            # Get the score from the current state
+            score = states[name]
 
+            # If the current score is greater than the maximum score, update max_score
+            if score > max_score:
+                max_score = score
+            if score < min_score:
+                min_score = score
+        bigDict['max_and_min'] = {'max' : max_score, 'min': min_score}
+        for name in state_names:
+            norm = (states[name] - min_score) / (max_score - min_score)
+            bigDict[name] = {'crime': statesCrime[name], 'climate': statesWeather[name], 'health': statesHealth[name], 'education': statesEdu[name], 'score': states[name], 'norm': norm }
+        print(max_score)
+        print(min_score)
         return redirect('/map')
 
     return render_template('survey.html')
