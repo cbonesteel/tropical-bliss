@@ -1,0 +1,9 @@
+body {
+    background-image: url('../pictures/background/tropical_picture.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: cover;
+}
+.tropical-blue {
+    background-color: #A8C8EE;
+}
