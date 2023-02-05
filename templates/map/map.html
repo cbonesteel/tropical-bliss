@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
+
+{% extends "base.html" %}
+{% block title %}Map{% endblock %}
+{% block header %}
+<img src="pictures/logo/tree-logo.png" class="rounded-circle" alt="Tropical Bliss Logo" style="width: 5%;height: 5%;">
+<a href="/">&lt; Back</a>
+{% endblock %}
+{% block content %}
 <style>
 	.state{
 		fill: none;
 		stroke: #a9a9a9;
 		stroke-width: 1;
+		float: left;
 	}
 	.state:hover{
 		fill-opacity:0.5;
@@ -47,10 +54,35 @@
 	#tooltip tr td:nth-child(2){
 		text-align:center;
 	}
+        .mapbg{
+		padding: 7px;
+		background: white;
+		border-radius: 10px;
+		max-width: 100%;
+		min-width: fit-content;
+		height: fit-content;
+		margin: 50px 50px 50px 50px;
+	}
+        .scoreboard{
+		padding: 7px;
+		background: white;
+		border-radius: 10px;
+		height: auto;
+		width: auto;
+		padding: 20px;
+		float: right;
+        }
 </style>
 <body>
 <div id="tooltip"></div><!-- div to hold tooltip. -->
-<svg width="960" height="600" id="statesvg"></svg> <!-- svg to hold the map. -->
+<div class="container">
+	<div>
+		<svg width="960" height="600" id="statesvg"></svg> <!-- svg to hold the map. -->
+	</div>
+	<div class="scoreboard">
+		<p> hi </p>
+	</div>
+</div>
 <script type="text/javascript" src="map.js"></script> <!-- creates map. -->
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
@@ -76,7 +108,7 @@
 				mid=Math.round(100*Math.random()), 
 				high=Math.round(100*Math.random());
 			sampleData[d]={low:d3.min([low,mid,high]), high:d3.max([low,mid,high]), 
-					avg:Math.round((low+mid+high)/3), color:d3.interpolate("#ffffcc", "#800026")(low/100)};
+					avg:Math.round((low+mid+high)/3), color:d3.interpolate("#ffffcc", "#4DA167")(low/100)};
 		});
 	
 	/* draw states on id #statesvg */	
@@ -84,5 +116,5 @@
 	
 	d3.select(self.frameElement).style("height", "600px"); 
 </script>
-
 </body>
+{% endblock %}
