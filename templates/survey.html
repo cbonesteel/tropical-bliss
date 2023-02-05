@@ -1,0 +1,213 @@
+{% extends "base.html" %}
+{% block title %}Survey{% endblock %}
+{% block header %}
+<a class="btn" href="/">
+    <img src="pictures/buttons/back.png" style="width: 75px;height: 75px;">
+</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="container p-4 my-4 border">
+    <form action="/survey" method="post">
+        <div class="text-center">
+            <p>
+              <strong>How important is education to you?</strong>
+            </p>
+            
+        <!--
+            <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group-lg" role="group" aria-label="First group" >
+                <button type="radio" class="rounded-circle border border-white" id="teacher0" name="teacher">1</button>
+                <button type="radio" class="rounded-circle border border-white" id="teacher1" name="teacher">2</button>
+                <button type="radio" class="rounded-circle border border-white" id="teacher2" name="teacher">3</button>
+                <button type="radio" class="rounded-circle border border-white" id="teacher3" name="teacher">4</button>
+                <button type="radio" class="rounded-circle border border-white" id="teacher4" name="teacher">5</button>
+                
+                <input type="radio" name="4" value="4">4
+                <button class="rounded-circle button button1">Green</button>
+                <button type="button" class="btn btn-light m-2">3</button>
+                <button type="button" class="btn btn-light m-2">4</button>
+                <button type="button" class="btn btn-light m-2">5</button>
+                -->
+                
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-secondary active">
+                    <input type="radio" name="teacher" id="teacher0" value="0" autocomplete="off"> 0
+                  </label>
+                  <label class="btn btn-secondary">
+                    <input type="radio" name="teacher" id="teacher1" value="1" autocomplete="off"> 1
+                  </label>
+                  <label class="btn btn-secondary">
+                    <input type="radio" name="teacher" id="teacher2" value="2" autocomplete="off"> 2
+                  </label>
+                  <label class="btn btn-secondary">
+                    <input type="radio" name="teacher" id="teacher3" value="3" autocomplete="off"> 3
+                  </label>
+                  <label class="btn btn-secondary">
+                    <input type="radio" name="teacher" id="teacher4" value="4" autocomplete="off"> 4
+                  </label>
+                </div>
+                <br>
+                <br>
+                </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+
+
+
+  <div class="container p-4 my-4 border">
+  <form>
+          <div class="text-center">
+              <p>
+                <strong>How important is it to have a low crime rate?</strong>
+              </p>
+              
+          <!--
+              <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
+                  <div class="btn-group-lg" role="group" aria-label="First group" >
+                  <button type="radio" class="rounded-circle border border-white" id="teacher0" name="teacher">1</button>
+                  <button type="radio" class="rounded-circle border border-white" id="teacher1" name="teacher">2</button>
+                  <button type="radio" class="rounded-circle border border-white" id="teacher2" name="teacher">3</button>
+                  <button type="radio" class="rounded-circle border border-white" id="teacher3" name="teacher">4</button>
+                  <button type="radio" class="rounded-circle border border-white" id="teacher4" name="teacher">5</button>
+                  
+                  <input type="radio" name="4" value="4">4
+                  <button class="rounded-circle button button1">Green</button>
+                  <button type="button" class="btn btn-light m-2">3</button>
+                  <button type="button" class="btn btn-light m-2">4</button>
+                  <button type="button" class="btn btn-light m-2">5</button>
+                  -->
+                  
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-secondary active">
+                      <input type="radio" name="crime" id="crime0" value="0" autocomplete="off"> 0
+                    </label>
+                    <label class="btn btn-secondary">
+                      <input type="radio" name="crime" id="crime1" value="1" autocomplete="off"> 1
+                    </label>
+                    <label class="btn btn-secondary">
+                      <input type="radio" name="crime" id="crime2" value="2" autocomplete="off"> 2
+                    </label>
+                    <label class="btn btn-secondary">
+                      <input type="radio" name="crime" id="crime3" value="3" autocomplete="off"> 3
+                    </label>
+                    <label class="btn btn-secondary">
+                      <input type="radio" name="crime" id="crime4" value="4" autocomplete="off"> 4
+                    </label>
+                    
+                  </div>
+                  <br>
+                  <br>
+                  </div>
+              </div>
+            </div>
+    </form>
+  </div>
+  
+  
+    <form>
+            <div class="text-center">
+                <p>
+                  <strong>Do you enjoy climate disasters???</strong>
+                </p>
+                
+            <!--
+                <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group-lg" role="group" aria-label="First group" >
+                    <button type="radio" class="rounded-circle border border-white" id="teacher0" name="teacher">1</button>
+                    <button type="radio" class="rounded-circle border border-white" id="teacher1" name="teacher">2</button>
+                    <button type="radio" class="rounded-circle border border-white" id="teacher2" name="teacher">3</button>
+                    <button type="radio" class="rounded-circle border border-white" id="teacher3" name="teacher">4</button>
+                    <button type="radio" class="rounded-circle border border-white" id="teacher4" name="teacher">5</button>
+                    
+                    <input type="radio" name="4" value="4">4
+                    <button class="rounded-circle button button1">Green</button>
+                    <button type="button" class="btn btn-light m-2">3</button>
+                    <button type="button" class="btn btn-light m-2">4</button>
+                    <button type="button" class="btn btn-light m-2">5</button>
+                    -->
+                    
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                      <label class="btn btn-secondary active">
+                        <input type="radio" name="climate" id="climate0" value="0" autocomplete="off"> 0
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="climate" id="climate1" value="1" autocomplete="off"> 1
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="climate" id="climate2" value="2" autocomplete="off"> 2
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="climate" id="climate3" value="3" autocomplete="off"> 3
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="climate" id="climate4" value="4" autocomplete="off"> 4
+                      </label>
+                    </div>
+                    <br>
+                    <br>
+                    </div>
+                </div>
+              </div>
+      </form>
+    </div>
+
+
+  <div class="container p-4 my-4 border">
+    <form>
+            <div class="text-center">
+                <p>
+                  <strong>How important is access to healthcare?</strong>
+                </p>
+                
+            <!--
+                <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group-lg" role="group" aria-label="First group" >
+                    <button type="radio" class="rounded-circle border border-white" id="teacher0" name="teacher">1</button>
+                    <button type="radio" class="rounded-circle border border-white" id="teacher1" name="teacher">2</button>
+                    <button type="radio" class="rounded-circle border border-white" id="teacher2" name="teacher">3</button>
+                    <button type="radio" class="rounded-circle border border-white" id="teacher3" name="teacher">4</button>
+                    <button type="radio" class="rounded-circle border border-white" id="teacher4" name="teacher">5</button>
+                    
+                    <input type="radio" name="4" value="4">4
+                    <button class="rounded-circle button button1">Green</button>
+                    <button type="button" class="btn btn-light m-2">3</button>
+                    <button type="button" class="btn btn-light m-2">4</button>
+                    <button type="button" class="btn btn-light m-2">5</button>
+                    -->
+                    
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                      <label class="btn btn-secondary active">
+                        <input type="radio" name="health" id="health0" value="0" autocomplete="off"> 0
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="health" id="health1" value="1" autocomplete="off"> 1
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="health" id="health2" value="2" autocomplete="off"> 2
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="health" id="health3" value="3" autocomplete="off"> 3
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="health" id="health4" value="4" autocomplete="off"> 4
+                      </label>
+                    </div>
+                    <br>
+                    <br>
+                    </div>
+                </div>
+              </div>
+        <div class="container text-center">    
+          <button type="submit" class="btn btn-primary" id="survey-submit">Submit</button>
+        </div>
+      </form>
+    </div>
+
+
+
+{% endblock %}
