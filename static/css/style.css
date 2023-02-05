@@ -42,3 +42,37 @@ body {
     background-color: #4CAF50; opacity:0.6;
     color: white;
 }
+.rectangles {
+    background-color: rgb(255, 255, 255, 0.2);
+    border-top-left-radius: 40px 40px;
+    border-top-right-radius: 40px 40px;
+    border-bottom-left-radius: 40px 40px;
+    border-bottom-right-radius: 40px 40px;
+    margin-top: 5%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 5%;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+bo {
+    font-family: 'Trebuchet MS', sans-serif;
+    color: aliceblue;     
+}
+
+.buttgr {
+ color: transparent;
+}
+
+.submitbutton {
+    border-color: transparent;
+    color: black;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size:  65px;
+    font: bolder;
+}
+
+.question {
+    font-size: 50px;
+    font: bolder;
+}
