@@ -55,34 +55,40 @@
 		text-align:center;
 	}
         .mapbg{
-		padding: 7px;
 		background: white;
 		border-radius: 10px;
-		max-width: 100%;
-		min-width: fit-content;
+		width: fit-content;
 		height: fit-content;
-		margin: 50px 50px 50px 50px;
 	}
-        .scoreboard{
-		padding: 7px;
-		background: white;
-		border-radius: 10px;
-		height: auto;
-		width: auto;
-		padding: 20px;
-		float: right;
-        }
+	.top-state-list{
+		text-align: center;
+		li{
+			font-size: 10px;
+		}
+	}
 </style>
 <body>
 <div id="tooltip"></div><!-- div to hold tooltip. -->
 <div class="container">
 	<div class="row">
-		<div class="col-lg-8">
-			<svg width="960" height="600" id="statesvg"></svg> <!-- svg to hold the map. -->
+		<div class="col-lg-10" style="padding: 5px;">
+			<div class="mapbg">
+				<svg width="960" height="600" id="statesvg"></svg> <!-- svg to hold the map. -->
+			</div>
 		</div>
-	</div>
-		<div class="scoreboard">
-			<p> hi </p>
+		<div class="col-lg-2" style="padding: 5px;">
+			<div class="mapbg" style="margin-left: 10px; float: right; padding:5px;">
+				<div class="top-state-list">
+					<h4>Top 5 States</h4>		
+					<ol>
+						<li>first</li>
+						<li>second</li>
+					</ol>
+				</div>
+			</div>
+			<div class="mapbg" style="margin-left: 10px; float: right; padding:5px;">
+				Why your first state is that way?
+			</div>
 		</div>
 	</div>
 </div>
