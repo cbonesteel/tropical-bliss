@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Our Data{% endblock %}
+{% block header %}
+<a class="btn" href="/">
+    <img src="pictures/buttons/back.png" style="width: 75px;height: 75px;">
+</a>
+
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col">
+                <h1 class="py-3">Data Source</h1>
+                <p>
+                    For this web application, we utilized HPPCSystems' preuploaded data as our primary data source.
+                    We were able to utilize HPPCSystems' ECL language to compress the data into a format that is 
+                    useful to the average user. This was mainly accomplished by averaging and standardizing different
+                    data points (such as health, education, crime, and climate data) for population and other factors.
+                    This data was then extracted into .csv files for our "database" to be used in our algorithms. Each
+                    cateogry of data was kept as an individual .csv file (or table) to make data access and querying as
+                    simple as possible.
+                </p>
+                <h1 class="py-3">Algorithms</h1>
+                <p>
+                    The algorithm for this system is quite simple. Each set of data had a slightly different scale, so
+                    we opted to normalize the data by simply using x-min/max-min for each category. These scores were then
+                    weighted based on the user provided survey, starting at a 0.5x weight for them not caring and increasing
+                    by .25x for each step, where the most important categories are weighted at 1.5x. These scores were then added
+                    together for the user's specific results and is normalized again to give a score between 0 and 100. These scores
+                    can then easily be displayed to a user for overall scores, as well as show individual scores for each category
+                    in a state.
+                </p>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% block title %}Survey{% endblock %}
+{% block header %}
+<a class="btn" href="/">
+    <img src="pictures/buttons/back.png" style="width: 75px;height: 75px;">
+</a>
+{% endblock %}
+
+{% block content %}
+
+
+<img src="pictures/logo/full-logo.png" class="rounded-circle img-fluid mx-auto d-block" alt="Tropical Bliss Logo" style="width: 20%;height: 20%;">
+<br>
+
+<div class="rectangles border">
+  <div class="text-center"><bo><strong>NOT IMPORTANT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IMPORTANT</strong></bo></div>
+    <form action="/survey" method="post">
+        <div class="text-center">
+            <p>
+              <br>
+              <strong>How important is education to you?</strong>
+            </p> 
+            
+              
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-secondary">
+                    <input type="radio" name="teacher" id="teacher0" value="0" autocomplete="off" required>
+                  </label>
+                  <label class="btn btn-secondary">
+                    <input type="radio" name="teacher" id="teacher1" value="1" autocomplete="off"> 
+                  </label>
+                  <label class="btn btn-secondary">
+                    <input type="radio" name="teacher" id="teacher2" value="2" autocomplete="off">
+                  </label>
+                  <label class="btn btn-secondary">
+                    <input type="radio" name="teacher" id="teacher3" value="3" autocomplete="off"> 
+                  </label>
+                  <label class="btn btn-secondary" >
+                    <input type="radio" name="teacher" id="teacher4" value="4" autocomplete="off"> 
+                  </label>
+                  
+                </div>
+                <br>
+                <br>  
+        </div>
+      </div>
+
+      <div class="text-center">
+      
+      </div>
+      
+  <div class="rectangles border">
+          <div class="text-center">
+              <p>
+                <br>
+               
+                <strong>How important is it to have a low crime rate?</strong>
+              </p>
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-secondary">
+                      <input type="radio" name="crime" id="crime0" value="0" autocomplete="off" required> 
+                    </label>
+                    <label class="btn btn-secondary">
+                      <input type="radio" name="crime" id="crime1" value="1" autocomplete="off"> 
+                    </label>
+                    <label class="btn btn-secondary">
+                      <input type="radio" name="crime" id="crime2" value="2" autocomplete="off"> 
+                    </label>
+                    <label class="btn btn-secondary">
+                      <input type="radio" name="crime" id="crime3" value="3" autocomplete="off"> 
+                    </label>
+                    <label class="btn btn-secondary">
+                      <input type="radio" name="crime" id="crime4" value="4" autocomplete="off">
+                    </label>
+                    
+                  </div>
+                  <br>
+                  <br>
+            </div>
+  </div>
+  
+  
+  <div class="rectangles border">
+          <div class="text-center">  
+              <p>
+                <br>
+                <strong>Do you enjoy climate disasters???</strong>
+              </p>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="climate" id="climate0" value="0" autocomplete="off" required> 
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="climate" id="climate1" value="1" autocomplete="off"> 
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="climate" id="climate2" value="2" autocomplete="off"> 
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="climate" id="climate3" value="3" autocomplete="off"> 
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="climate" id="climate4" value="4" autocomplete="off"> 
+                      </label>
+                    </div>
+                    <br>
+                    <br>
+            </div>
+    </div>
+
+
+  <div class="rectangles">
+            <div class="text-center">  
+              <p>
+                  <br>
+                  <question><strong>How important is access to healthcare?</strong></question>
+              </p>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="health" id="health0" value="0" autocomplete="off" required> 
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="health" id="health1" value="1" autocomplete="off"> 
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="health" id="health2" value="2" autocomplete="off"> 
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="health" id="health3" value="3" autocomplete="off"> 
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="health" id="health4" value="4" autocomplete="off"> 
+                      </label>
+                    </div>
+                    <br>
+                    <br>
+                    </div>
+        
+      
+    </div>
+
+    <div class="container text-center">    
+      <button class="submitbutton" type="submit" style="background-color: transparent" class="btn btn-primary" id="survey-submit">SUBMIT</button>
+    </div>
+  </form>
+
+  </form>
+
+{% endblock %}
