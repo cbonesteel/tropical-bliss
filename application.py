@@ -131,7 +131,7 @@ def survey():
             bigDict[name] = {'crime': statesCrime[name], 'climate': statesWeather[name], 'health': statesHealth[name], 'education': statesEdu[name], 'score': states[name]}
         print(bigDict)
 
-        return redirect('/map')
+        return map(bigDict)
 
     return render_template('survey.html')
 

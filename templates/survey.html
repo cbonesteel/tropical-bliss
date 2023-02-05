@@ -7,9 +7,9 @@
 {% endblock %}
 
 {% block content %}
-
+<form method="post">
 <div class="container p-4 my-4 border">
-    <form action="/survey" method="post">
+    
         <div class="text-center">
             <p>
               <strong>How important is education to you?</strong>
@@ -32,7 +32,7 @@
                 -->
                 
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                  <label class="btn btn-secondary active">
+                  <label class="btn btn-secondary">
                     <input type="radio" name="teacher" id="teacher0" value="0" autocomplete="off"> 0
                   </label>
                   <label class="btn btn-secondary">
@@ -53,14 +53,12 @@
                 </div>
             </div>
           </div>
-        </form>
       </div>
 
 
 
 
   <div class="container p-4 my-4 border">
-  <form>
           <div class="text-center">
               <p>
                 <strong>How important is it to have a low crime rate?</strong>
@@ -83,7 +81,7 @@
                   -->
                   
                   <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label class="btn btn-secondary active">
+                    <label class="btn btn-secondary">
                       <input type="radio" name="crime" id="crime0" value="0" autocomplete="off"> 0
                     </label>
                     <label class="btn btn-secondary">
@@ -105,11 +103,10 @@
                   </div>
               </div>
             </div>
-    </form>
   </div>
   
   
-    <form>
+
             <div class="text-center">
                 <p>
                   <strong>Do you enjoy climate disasters???</strong>
@@ -132,7 +129,7 @@
                     -->
                     
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                      <label class="btn btn-secondary active">
+                      <label class="btn btn-secondary">
                         <input type="radio" name="climate" id="climate0" value="0" autocomplete="off"> 0
                       </label>
                       <label class="btn btn-secondary">
@@ -153,13 +150,12 @@
                     </div>
                 </div>
               </div>
-      </form>
+  
     </div>
 
 
   <div class="container p-4 my-4 border">
-    <form>
-            <div class="text-center">
+                <div class="text-center">
                 <p>
                   <strong>How important is access to healthcare?</strong>
                 </p>
@@ -181,7 +177,7 @@
                     -->
                     
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                      <label class="btn btn-secondary active">
+                      <label class="btn btn-secondary">
                         <input type="radio" name="health" id="health0" value="0" autocomplete="off"> 0
                       </label>
                       <label class="btn btn-secondary">
@@ -205,8 +201,8 @@
         <div class="container text-center">    
           <button type="submit" class="btn btn-primary" id="survey-submit">Submit</button>
         </div>
-      </form>
     </div>
+  </form>
 
 
 
